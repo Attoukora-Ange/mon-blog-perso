@@ -1,0 +1,41 @@
+<%- include('includes/header') %>
+
+    <div class="contenu_index">
+        <div class="index_un">
+            <div class="un">Les meilleurs des conseils pharmaceutiques...</div>
+        </div>
+        <div class="index_deux">
+            <div class="un">Article N°<%= articles._id %>
+            </div>
+            <div class="deux">Les meilleurs des conseils pharmaceutiques données par des experts.</div>
+        </div>
+        <div class="index_trois">
+
+            <div class="article">
+                <div class="titre_article"><span>Titre :</span>
+                    <%= articles.titre_article %>
+                </div>
+                <div>
+                    <img src="/images/article/<%= articles.image_article %>" alt="image index">
+                </div>
+                <div class="date_article"><span>Publié le :</span>
+                    <%= articles.date_parution %>
+                </div>
+                <div class="resume_article"><span>Article :</span>
+                    <%= articles.contenu_article %>
+                </div>
+                <div class="resume_article"><span>Auteur :</span>
+                    <%= articles.auteur_article%>
+                </div>
+                <div class="desbutton"
+                    style="display: flex;justify-content: space-between;padding-top: 1rem;background: chocolate;align-items: center;padding: 1rem;margin-top: 1rem;">
+
+                    <button><a href="/perso">Retour</a></button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <%- include('includes/footer') %>

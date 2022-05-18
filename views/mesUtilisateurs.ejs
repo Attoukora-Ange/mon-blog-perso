@@ -1,0 +1,60 @@
+<%- include('includes/header') %>
+<div class="body-contenu contact">
+    <div class="err"></div> 
+     <div class="contenu_un un">
+         <table>
+             <thead>
+                 <tr>
+                     <th>Date inscription</th>
+                     <th>Nom des utilisateurs</th>
+                     <th>Prénom des utilisateurs</th>
+                     <th>Email des utilisateurs</th>
+                     <th>Mot de passe</th>
+                     <th>Supprimer</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <% mesUtilisateurs.forEach(user=> { %>
+                     <tr>
+                         <td>
+                             <%= user.date %>
+                         </td>
+                         <td>
+                             <h2><%= user.nom %></h2>
+                         </td>
+                         <td>
+                             <%= user.prenom %>
+                         </td>
+                         <td>
+                            <a href="mailto:<%= user.email %>"><%= user.email %></a> 
+                         </td>
+                         <td>
+                             <%= user.password %>
+                         </td>
+                         <td>
+                             <% if (user.email !== 'admin@gmail.com') { %>
+                                 <form action="/admin/mesUtilisateurs/<%= user._id %>?_method=DELETE" method="post">
+                                    <button class="supprimer">Supprimer</button>
+                                </form>
+                             <% }%>
+                         </td>
+                     </tr>
+                     <%}) %>
+             </tbody>
+             
+         </table>
+     </div>
+ </div>
+ <script>
+    const sups = document.querySelectorAll('.supprimer');
+    sups.forEach(sup => {
+      sup.addEventListener('click', (e) => {
+     const confir =  confirm('Voulez vous supprimé cet utilisateur ?');
+        if (!confir) {
+          return e.preventDefault();
+        }
+      })
+    });
+    
+  </script>
+ <%- include('includes/footer') %>

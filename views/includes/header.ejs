@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/inscription.css">
+    <link rel="stylesheet" href="/css/editArticle.css">
+    <link rel="stylesheet" href="/css/tableau.css">
+    <title>Blog | <%= tite_blog %>
+    </title>
+</head>
+
+<body>
+    <header>
+        <% if(user){ %>
+            <div class="logo">
+                <a href="#">LogoATT</a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>Bienvenue <%= utilisateur.nom %>
+                    </li>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/modifierProfil/<%= utilisateur._id %>">Modifier le profile</a></li>
+                    <%if (utilisateur.email==process.env.ADMIN) { %>
+                        <li><a href="/admin/editArticle">Créer article</a></li>
+                        <li><a href="/admin/mesUtilisateurs">Mes utilisateurs</a></li>
+                        <li><a href="/admin/messagePost">Messages postés</a></li>
+                        <% } %>
+                            <li>
+                                <form action="/logout?_method=DELETE" method="post">
+                                    <button>Déconnexion</button>
+                                </form>
+                            </li>
+                </ul>
+            </div>
+            <%} else { %>
+                <div class="logo">
+                    <a href="#">LogoATT</a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="/">Acceueil</a></li>
+                        <li><a href="/connexion">Connexion</a></li>
+                        <li><a href="/inscription">Inscription</a></li>
+                    </ul>
+                </div>
+                <% } %>
+    </header>

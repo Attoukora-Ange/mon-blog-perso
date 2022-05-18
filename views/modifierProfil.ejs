@@ -1,0 +1,13 @@
+<%- include('includes/header')  %> 
+<div class="formulaire">
+    <form action="/modifier/utilisateur/<%= utilisateur.id %>?_method=PUT" method="post">
+        <h2>Modifier mon profil</h2>
+        <input class="champs chp1" type="text" placeholder="Entrer votre nom" name="nom" value="<%= utilisateur.nom %> "><span class="nom"></span><br>
+        <input class="champs chp2" type="text" placeholder="Entrer votre prenom" name="prenom"  value="<%= utilisateur.prenom %> "><span class="prenom"></span><br>
+        <input class="champs chp3" type="email" placeholder="Entrer votre email" name="email"  value="<%= utilisateur.email %> "><span class="email"></span><br>
+        <input class="champs chp4" type="password" placeholder="Entrer votre password" name="password"  value="<%= utilisateur.password %> "><span class="password"></span><br>
+        <input class="soumission" type="submit" value="Modifier">
+    </form>
+</div>
+<script src="/js/inscription.js"></script>
+<%- include('includes/footer')  %>  

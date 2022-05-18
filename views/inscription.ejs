@@ -1,0 +1,13 @@
+<%- include('includes/header')  %> 
+<div class="formulaire">
+    <form action="/inscription" method="post">
+        <h2>Inscription</h2>
+        <input class="champs chp1" type="text" placeholder="Entrer votre nom" name="nom"><span class="nom"></span><br>
+        <input class="champs chp2" type="text" placeholder="Entrer votre prenom" name="prenom"><span class="prenom"></span><br>
+        <input class="champs chp3" type="email" placeholder="Entrer votre email" name="email"><span class="email"></span><br>
+        <input class="champs chp4" type="password" placeholder="Entrer votre password" name="password"><span class="password"></span><br>
+        <input class="soumission" type="submit" value="Inscription">
+    </form>
+</div>
+<script src="/js/inscription.js"></script>
+<%- include('includes/footer')  %>  

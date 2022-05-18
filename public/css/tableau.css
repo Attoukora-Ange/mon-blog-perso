@@ -1,0 +1,22 @@
+/***********************************/
+.body-contenu .un{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table, thead th, tbody td, tbody tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+tbody td{
+    padding: .1rem;
+}
+thead th{
+    font-size: 1.1rem;
+    padding: 0.1rem 3rem;
+}
+tr:nth-child(even) {
+    background: gray;
+}
+/****************************************/

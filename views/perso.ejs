@@ -1,0 +1,88 @@
+<%- include('includes/header') %>
+
+    <div class="contenu_index">
+        
+    <div class="err" id="err">
+        <% if (message_success) { %>
+            <%= message_success%>
+                <% } %>
+    </div>
+        <div class="index_un">
+            <div class="un">Les meilleurs des conseils pharmaceutiques...</div>
+        </div>
+        <div class="index_deux">
+            <div class="un">Nos Parutions</div>
+            <div class="deux">Les meilleurs des conseils pharmaceutiques donnés par des experts.</div>
+        </div>
+        <div class="index_trois">
+            <% articles.forEach(article=> {%>
+                <div class="article">
+                    <div class="titre_article"><span>Titre :</span>
+                        <%= article.titre_article %>
+                    </div>
+                    <div>
+                        <a href="/lecture/<%= article._id %>"><img src="/images/article/<%= article.image_article %>"
+                                alt="image index"></a>
+                    </div>
+                    <div class="date_article"><span>Publié le :</span>
+                        <%= article.date_parution %>
+                    </div>
+                    <div class="resume_article"><span>Résumé :</span>
+                        <%= article.resume_article %>
+                    </div>
+                    <div class="resume_article"><span>Auteur :</span>
+                        <%= article.auteur_article%>
+                    </div>
+                    <div class="desbutton"
+                        style="display: flex;justify-content: space-between;padding-top: 1rem;background: chocolate;align-items: center;padding: 1rem;margin-top: 1rem;">
+                        <button><a href="/lecture/<%= article._id %>">Lire l'article</a></button>
+                        <%if (utilisateur.email==process.env.ADMIN) { %>
+                            <button class="modifier">
+                                <a href="/admin/article/modifier/<%= article._id %>">Modifier l'article</a>
+                            </button>
+
+                            <form action="/admin/article/supprimer/<%= article._id %>?_method=DELETE" method="post">
+                                <button class="supprimer">Supprimer l'article</button>
+                            </form>
+                            <% } %>
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+        <div class="index_deux">
+            <div class="un">Contactez-nous</div>
+        </div>
+        <div class="index_formulaire">
+            <form action="/message" method="post">
+                <div>
+                    <input type="email" placeholder="Entrez votre email...">
+                </div>
+                <div>
+                    <input type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+      const sups = document.querySelectorAll('.supprimer');
+      const modifiers= document.querySelectorAll('.modifier');
+      sups.forEach(sup => {
+        sup.addEventListener('click', (e) => {
+          const confir = confirm('Voulez vous supprimé cet article ?');
+          if (!confir) {
+            return e.preventDefault();
+          }
+        })
+      });
+      modifiers.forEach(modifier => {
+        modifier.addEventListener('click', (e) => {
+          const confir = confirm('Voulez vous modifier cet article ?');
+          if (!confir) {
+            return e.preventDefault();
+          }
+        })
+      });
+    </script>
+
+    <%- include('includes/footer') %>

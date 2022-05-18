@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.formulaire {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#0250c5, #d43f8d);
+  /* background: linear-gradient(#d43f8d, #d33bfd ); */
+}
+.formulaire form {
+  background-color: rgba(0, 0, 255, 0.1);
+  box-shadow: 2px 3px 2px 5px rgba(0, 0, 0, 0.8);
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+.formulaire form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: white;
+}
+.champs {
+  display: block;
+  font-size: 16px;
+  width: 350px;
+  padding: 5px 10px;
+  margin: 10px 0 5px 0;
+  outline: none;
+  border-radius: 10px;
+}
+.formulaire form input[type="submit"] {
+  float: right;
+  padding: 0.5rem;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.formulaire form input[type="submit"]:hover {
+  background-color: #d33bfd;
+}
+
+.rouge {
+  color: green;
+  font-weight: 600;
+}
+.bleu {
+  color: red;
+  font-weight: 600;
+}

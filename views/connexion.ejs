@@ -1,0 +1,26 @@
+<%- include('includes/header') %>
+
+    <div class="err" id="err">
+        <% if (message_success) { %>
+            <%= message_success%>
+                <% } %>
+    </div>
+    <div class="err" id="err">
+        <% if (message_error) { %>
+            <%= errors%>
+                <% } %>
+    </div>
+ <% console.log(message_error); %> 
+    
+    <div class="formulaire">
+
+        <form action="/connexion" method="post">
+            <h2>Connexion</h2>
+            <input class="champs chp3" type="email" placeholder="Entrer votre email" name="email"><span
+                class="email"></span><br>
+            <input class="champs chp4" type="password" placeholder="Entrer votre password" name="password"><span
+                class="password"></span><br>
+            <input class="soumission" type="submit" value="Connexion">
+        </form>
+    </div>
+    <%- include('includes/footer') %>

@@ -1,0 +1,128 @@
+.contenu_index {
+  min-height: 80vh;
+  margin: 0 5%;
+}
+.index_un {
+  height: 50vh;
+  background-image: url("/images/20494859.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index_un .un {
+  width: 60%;
+  padding: 6% 3rem;
+  font-size: 4rem;
+  color: whitesmoke;
+}
+
+.index_deux {
+  padding: 3rem;
+  position: relative;
+}
+.index_deux::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, -50%);
+  height: 5px;
+  width: 10%;
+  background-color: #d33bfd;
+}
+.index_deux .un,
+.index_deux .deux {
+  text-align: center;
+  color: black;
+}
+.index_deux .un {
+  font-size: 4rem;
+}
+.index_deux .deux {
+  font-size: 2.5rem;
+}
+.index_trois {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  flex-wrap: wrap;
+}
+.index_trois .article {
+  width: 30%;
+}
+.index_trois .article div {
+  width: 100%;
+}
+.index_trois .article div img {
+  width: 100%;
+}
+.index_trois .article .titre_article,
+.index_trois .article .titre_article span {
+  font-size: 1.5rem;
+  padding: 1.5rem 0 1rem 0;
+  text-align: justify;
+}
+.index_trois .article .date_article span,
+.index_trois .article .resume_article span,
+.index_trois .article .titre_article span,
+.index_trois .article .titre_auteur span {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+.index_trois .article .date_article,
+.index_trois .article .resume_article,
+.index_trois .article .titre_auteur {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+.index_trois .article .titre_article span {
+  font-weight: 700;
+}
+.index_trois button {
+  padding: 0.5rem;
+  /* background-color: #d33bfd; */
+  border-radius: 7px;
+  outline: none;
+  border: none;
+}
+.index_trois button:hover {
+  background-color: #d33bfd;
+}
+.index_trois button a {
+  font-size: 1rem;
+}
+.index_formulaire {
+  display: flex;
+  justify-content: center;
+}
+.index_formulaire form {
+  width: 30%;
+}
+.index_formulaire form div {
+  margin: auto;
+  width: 70%;
+}
+.index_formulaire form div input {
+  margin: auto;
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  padding: 0.8rem;
+}
+.index_formulaire form div input:focus {
+  background-color: #d33bfd45;
+}
+
+.index_formulaire form div input[type="submit"] {
+  padding: 0.5rem;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+.index_formulaire form div input[type="submit"]:hover {
+  background-color: #d33bfd;
+}

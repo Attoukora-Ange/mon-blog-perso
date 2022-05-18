@@ -1,0 +1,52 @@
+<%- include('includes/header') %>
+    <div class="body-contenu contact">
+        <div class="contenu_un">
+            <div class="gauche">
+                <div class="titre">Modifier un article</div>
+                <div class="err" id="err"></div>
+                <div class="contenu_text">
+                    <form action="/admin/article/modifier/<%= modifierArticle._id %>?_method=PUT" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label for="titre_article">Titre de l'article</label><br>
+                            <input type="text" id="titre_article" placeholder="Ex: Le paracétamol dans notre quotidien"
+                                name="titre_article" value="<%= modifierArticle.titre_article %>" required> 
+                        </div>
+                        <div class="idendite">
+                            <div>
+                                <div>
+                                    <label for="auteur">Nom de l'auteur</label><br>
+                                    <input type="text" id="auteur" placeholder="EX: Dr Attoukora" name="auteur_article"
+                                    value="<%= modifierArticle.auteur_article %>"  required>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="date_parution">Date de publication</label><br>
+                                    <input type="date" id="date_parution" name="date_parution" value="<%= modifierArticle.date_parution %>" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="image">Image de l'article</label><br>
+                            <input type="file" id="image" placeholder="EX: Image" name="image_article" value="image/<%= modifierArticle.image_article %>" required>
+                        </div>
+                        <div>
+                            <div>Résumé de l'article</div>
+                            <textarea placeholder="Veuillez écrire le resumé de l'article ici ..." name="resume_article"
+                                id="resume_article" cols="20" rows="5"  required><%= modifierArticle.resume_article %></textarea>
+                        </div>
+                        <div>
+                            <div>Contenu de l'article</div>
+                            <textarea placeholder="Veuillez écrire le contenu de l'article ici ..."
+                                name="contenu_article" id="contenu_article" cols="30" rows="10"  required><%= modifierArticle.contenu_article %></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Modifier l'article" id="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer') %>

@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  list-style: none;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+body {
+  background: #fff;
+}
+header {
+  padding: 1rem 10%;
+  background-color: #d33bfd;
+  /* background-color: rebeccapurple; */
+}
+header,
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo a {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.nav ul li a {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.nav ul li a:hover {
+  color: #3344dd;
+}
+/* ***************************** */
+footer {
+  height: 15vh;
+  background: #d33bfd;
+  border-bottom: 100px solid #20233e;
+  border-right: 506px solid transparent;
+}
